@@ -64,11 +64,13 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **Add name and scores to the leaderboard**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+#### 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Acquire data from leaderboard api**
 
 <!-- LIVE DEMO -->
 
