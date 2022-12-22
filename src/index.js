@@ -14,7 +14,7 @@ import {
   gameName,
   gameHading,
 } from './modules/globals.js';
-import { errorMsg, successMsg } from './modules/messages.js';
+import { emptyMsg, errorMsg, successMsg } from './modules/messages.js';
 import showGameName from './modules/show-game-name.js';
 
 let gameURL = '';
@@ -44,14 +44,14 @@ submitBtn.addEventListener('click', (e) => {
     addScore(gameURL, userName.value, userScore.value);
     theForm.reset();
     successMsg(msg);
+    setTimeout(() => {
+      renderScores(gameURL, scoreList);
+    }, 400);
   } else {
     errorMsg(msg);
   }
 });
 window.onload = () => {
-  if (scoreList.childNodes.length === 0) {
-    // scoreList.style.border = "none";
-    scoreList.innerHTML = '<p class="empty-message">The leaderboard is empty</p>';
-  }
+  emptyMsg(scoreList);
   showGameName(gameHading, gameName);
 };
