@@ -11,8 +11,11 @@ import {
   userScore,
   submitBtn,
   theForm,
+  gameName,
+  gameHading,
 } from './modules/globals.js';
 import { errorMsg, successMsg } from './modules/messages.js';
+import showGameName from './modules/show-game-name.js';
 
 let gameURL = '';
 fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
@@ -50,4 +53,5 @@ window.onload = () => {
     // scoreList.style.border = "none";
     scoreList.innerHTML = '<p class="empty-message">The leaderboard is empty</p>';
   }
+  showGameName(gameHading, gameName);
 };

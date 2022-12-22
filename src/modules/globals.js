@@ -4,7 +4,16 @@ const userName = document.getElementById('user-name');
 const userScore = document.getElementById('user-score');
 const submitBtn = document.getElementById('submit-btn');
 const theForm = document.getElementById('add-score');
+const gameName = 'The game is on';
+const gameHading = document.getElementById('game-heading');
 
 export {
-  scoreList, refreshBtn, userName, userScore, submitBtn, theForm,
+  scoreList,
+  refreshBtn,
+  userName,
+  userScore,
+  submitBtn,
+  theForm,
+  gameName,
+  gameHading,
 };
