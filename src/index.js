@@ -46,7 +46,7 @@ submitBtn.addEventListener('click', (e) => {
     successMsg(msg);
     setTimeout(() => {
       renderScores(gameURL, scoreList);
-    }, 400);
+    }, 500);
   } else {
     errorMsg(msg);
   }
