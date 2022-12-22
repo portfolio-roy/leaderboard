@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 $primary: rgb(11 65 96);
 $success: green;
 $error: red;
@@ -94,7 +95,7 @@ $col: 8.33%;
 }
 
 .col-sm-2 {
-  width: $col*2;
+  width: $col * 2;
 }
 
 .col-sm-3 {
@@ -102,11 +103,11 @@ $col: 8.33%;
 }
 
 .col-sm-4 {
-  width: $col*4;
+  width: $col * 4;
 }
 
 .col-sm-5 {
-  width: $col*5;
+  width: $col * 5;
 }
 
 .col-sm-6 {
@@ -114,11 +115,11 @@ $col: 8.33%;
 }
 
 .col-sm-7 {
-  width: $col*7;
+  width: $col * 7;
 }
 
 .col-sm-8 {
-  width: $col*8;
+  width: $col * 8;
 }
 
 .col-sm-9 {
@@ -126,11 +127,11 @@ $col: 8.33%;
 }
 
 .col-sm-10 {
-  width: $col*10;
+  width: $col * 10;
 }
 
 .col-sm-11 {
-  width: $col*11;
+  width: $col * 11;
 }
 
 .col-sm-12 {
@@ -153,8 +154,47 @@ header {
 
     i {
       color: gold;
+      transform: rotateY(45deg);
+      animation: rotate-nimation 1500ms linear infinite;
     }
   }
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: $primary;
+  color: white;
+  transition: 500ms all ease;
+
+  i {
+    transition: 500ms all ease;
+  }
+
+  &:hover {
+    background-color: rgba($color: $primary, $alpha: 80%);
+
+    i {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+@keyframes rotate-nimation {
+  from {
+    transform: rotateY(45deg);
+  }
+
+  to {
+    transform: rotateY(225deg);
+  }
+}
+
+#game-heading span {
+  text-transform: capitalize;
 }
 
 #inner-container {
@@ -184,16 +224,6 @@ header {
   font-size: 18px;
 }
 
-button {
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 12px;
-  border-radius: 8px;
-  background-color: $primary;
-  color: white;
-}
-
 #scores {
   list-style-type: none;
   padding: 0;
@@ -203,6 +233,8 @@ button {
   align-items: stretch;
   width: 100%;
   gap: 4px;
+  max-height: 220px;
+  overflow-y: auto;
 
   .score {
     padding: 0;
@@ -303,7 +335,7 @@ button {
   }
 
   .col-md-2 {
-    width: $col*2;
+    width: $col * 2;
   }
 
   .col-md-3 {
@@ -311,11 +343,11 @@ button {
   }
 
   .col-md-4 {
-    width: $col*4;
+    width: $col * 4;
   }
 
   .col-md-5 {
-    width: $col*5;
+    width: $col * 5;
   }
 
   .col-md-6 {
@@ -323,11 +355,11 @@ button {
   }
 
   .col-md-7 {
-    width: $col*7;
+    width: $col * 7;
   }
 
   .col-md-8 {
-    width: $col*8;
+    width: $col * 8;
   }
 
   .col-md-9 {
@@ -335,11 +367,11 @@ button {
   }
 
   .col-md-10 {
-    width: $col*10;
+    width: $col * 10;
   }
 
   .col-md-11 {
-    width: $col*11;
+    width: $col * 11;
   }
 
   .col-md-12 {

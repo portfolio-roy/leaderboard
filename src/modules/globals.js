@@ -4,7 +4,7 @@ const userName = document.getElementById('user-name');
 const userScore = document.getElementById('user-score');
 const submitBtn = document.getElementById('submit-btn');
 const theForm = document.getElementById('add-score');
-const gameName = 'The game is on';
+const gameName = '<span>The game is on</span>';
 const gameHading = document.getElementById('game-heading');
 const msg = document.getElementById('msg-box');
 export {

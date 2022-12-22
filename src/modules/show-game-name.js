@@ -1,4 +1,4 @@
 const showGameName = (element, txt) => {
-  element.innerText = txt;
+  element.innerHTML = txt;
 };
 export default showGameName;
