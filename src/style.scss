@@ -150,6 +150,7 @@ header {
 #inner-container {
   margin-top: 48px;
   flex-direction: column;
+  gap: 64px;
 }
 
 .columns {
@@ -180,10 +181,6 @@ button {
   border-radius: 8px;
   background-color: $primary;
   color: white;
-}
-
-#inner-container {
-  gap: 64px;
 }
 
 #scores {
