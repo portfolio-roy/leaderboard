@@ -53,6 +53,17 @@ submitBtn.addEventListener('click', (e) => {
     errorMsg(msg);
   }
 });
+userName.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    userScore.focus();
+  }
+});
+userScore.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    submitBtn.click();
+    userName.focus();
+  }
+});
 window.onload = () => {
   emptyMsg(scoreList);
   showGameName(gameHading, gameName);
