@@ -5,7 +5,7 @@ const renderScores = async (gameLink, scores) => {
     newData.result.forEach((score) => {
       const singleScore = document.createElement('li');
       singleScore.classList.add('score');
-      singleScore.innerHTML = `${score.user}: ${score.score}`;
+      singleScore.innerHTML = `<i class="fa-solid fa-trophy"></i> ${score.user}: ${score.score}`;
       scores.appendChild(singleScore);
     });
   });
