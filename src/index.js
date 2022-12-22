@@ -2,9 +2,19 @@
 
 import _ from 'lodash';
 import './style.scss';
+// import gameURL from "./modules/game-id.js";
+import addScore from './modules/add-score.js';
+import renderScores from './modules/render-scores.js';
+import {
+  scoreList,
+  refreshBtn,
+  userName,
+  userScore,
+  submitBtn,
+  theForm,
+} from './modules/globals.js';
 
-// const gameId = "UGoHBGgZ60k4fkNyRsl5";
-let gameIdentity = '';
+let gameURL = '';
 fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
   method: 'POST',
   headers: {
@@ -15,60 +25,26 @@ fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
   }),
 })
   .then((res) => res.json())
-  .then((gameID) => {
-    const response = gameID.result;
-    gameIdentity = response.substring(14, response.lastIndexOf(' '));
+  .then((game) => {
+    const response = game.result;
+    const gameId = response.substring(14, response.lastIndexOf(' '));
+    gameURL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
   });
-const gameScores = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameIdentity}/scores`;
 
-const scoreList = document.getElementById('scores');
-const buildScoreList = async (gameLink) => {
-  const response = await fetch(gameLink);
-  await response.json().then((newData) => {
-    scoreList.replaceChildren();
-    newData.result.forEach((score) => {
-      const singleScore = document.createElement('li');
-      singleScore.classList.add('score');
-      singleScore.innerHTML = `${score.user}: ${score.score}`;
-      scoreList.appendChild(singleScore);
-    });
-  });
-};
-const addScore = async (gameLink, user, score) => {
-  await fetch(gameLink, {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-    body: JSON.stringify({
-      user,
-      score,
-    }),
-  });
-};
-
-const refreshBtn = document.getElementById('refresh-btn');
 refreshBtn.addEventListener('click', () => {
-  buildScoreList(gameScores);
+  renderScores(gameURL, scoreList);
 });
 
-const userName = document.getElementById('user-name');
-const userScore = document.getElementById('user-score');
-const submitBtn = document.getElementById('submit-btn');
-const theForm = document.getElementById('add-score');
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (userName.value !== '' && userScore.value !== '') {
-    addScore(gameScores, userName.value, userScore.value);
-    buildScoreList(gameScores);
+    addScore(gameURL, userName.value, userScore.value);
     theForm.reset();
   }
 });
-window.onload;
-// const scoreList = document.getElementById('scores');
-// scores.forEach((score) => {
-//   const singleScore = document.createElement('li');
-//   singleScore.classList.add('score');
-//   singleScore.innerHTML = `${score.name}: ${score.score}`;
-//   scoreList.appendChild(singleScore);
-// });
+window.onload = () => {
+  if (scoreList.childNodes.length === 0) {
+    // scoreList.style.border = "none";
+    scoreList.innerHTML = '<p class="empty-message">The leaderboard is empty</p>';
+  }
+};
