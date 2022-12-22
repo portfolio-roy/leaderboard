@@ -166,7 +166,7 @@ If you like this project give me a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank all my fellow micronauts.
+Thanks to my friend [Lucas](https://github.com/Lucash2022) for a good insight of the code.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,4 +1,6 @@
 $primary: rgb(11 65 96);
+$success: green;
+$error: red;
 
 * {
   box-sizing: border-box;
@@ -200,6 +202,22 @@ button {
     &:nth-child(even) {
       background-color: rgb(211 211 211 / 50%);
     }
+  }
+}
+
+.message {
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 2px lightgrey;
+
+  &#error {
+    color: $error;
+    background-color: rgba($color: $error, $alpha: 10%);
+  }
+
+  &#success {
+    color: $success;
+    background-color: rgba($color: $success, $alpha: 10%);
   }
 }
 

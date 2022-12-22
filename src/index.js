@@ -33,7 +33,7 @@ fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
 refreshBtn.addEventListener('click', () => {
   renderScores(gameURL, scoreList);
 });
-
+const msg = document.getElementById('msg-box');
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (userName.value !== '' && userScore.value !== '') {
