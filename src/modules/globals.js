@@ -6,7 +6,7 @@ const submitBtn = document.getElementById('submit-btn');
 const theForm = document.getElementById('add-score');
 const gameName = 'The game is on';
 const gameHading = document.getElementById('game-heading');
-
+const msg = document.getElementById('msg-box');
 export {
   scoreList,
   refreshBtn,
@@ -16,4 +16,5 @@ export {
   theForm,
   gameName,
   gameHading,
+  msg,
 };

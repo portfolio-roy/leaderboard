@@ -13,6 +13,7 @@ import {
   theForm,
   gameName,
   gameHading,
+  msg,
 } from './modules/globals.js';
 import { emptyMsg, errorMsg, successMsg } from './modules/messages.js';
 import showGameName from './modules/show-game-name.js';
@@ -36,8 +37,9 @@ fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
 
 refreshBtn.addEventListener('click', () => {
   renderScores(gameURL, scoreList);
+  msg.replaceChildren();
 });
-const msg = document.getElementById('msg-box');
+
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (userName.value !== '' && userScore.value !== '') {

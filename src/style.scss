@@ -198,18 +198,47 @@ button {
   list-style-type: none;
   padding: 0;
   border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 4px;
 
   .score {
-    padding: 8px 16px;
+    padding: 0;
     border-radius: 4px;
     box-shadow: 1px 2px 2px lightgrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
     &:nth-child(odd) {
-      background-color: white;
+      background-color: rgb(245 246 225);
+
+      .right {
+        background-color: rgb(225 225 84);
+      }
     }
 
     &:nth-child(even) {
-      background-color: rgb(211 211 211 / 50%);
+      background-color: rgb(224 248 228);
+
+      .right {
+        background-color: rgb(131 225 84);
+      }
+    }
+
+    p {
+      margin: 0;
+      padding: 8px 16px;
+
+      &.right {
+        background-color: rgb(225 225 84);
+        font-weight: bold;
+        border-radius: 0 4px 4px 0;
+        min-width: 60px;
+      }
     }
 
     i {
