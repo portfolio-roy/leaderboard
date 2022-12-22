@@ -2,7 +2,6 @@
 
 import _ from 'lodash';
 import './style.scss';
-// import gameURL from "./modules/game-id.js";
 import addScore from './modules/add-score.js';
 import renderScores from './modules/render-scores.js';
 import {
