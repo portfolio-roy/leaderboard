@@ -150,6 +150,10 @@ header {
     color: white;
     padding: 8px;
     border-radius: 4px;
+
+    i {
+      color: gold;
+    }
   }
 }
 
@@ -206,6 +210,10 @@ button {
 
     &:nth-child(even) {
       background-color: rgb(211 211 211 / 50%);
+    }
+
+    i {
+      color: goldenrod;
     }
   }
 }
