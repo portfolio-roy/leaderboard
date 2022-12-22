@@ -65,12 +65,13 @@
 ### Key Features <a name="key-features"></a>
 
 - **Add name and scores to the leaderboard**
+- **Acquire data from leaderboard api**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Acquire data from leaderboard api**
+- [ ] **Change styles**
 
 <!-- LIVE DEMO -->
 

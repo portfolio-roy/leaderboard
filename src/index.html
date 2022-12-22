@@ -14,23 +14,15 @@
                 <div class="col-md-6 col-sm-12" id="recent-scores">
                     <div id="score-header" class="d-flex flex-row space-between">
                         <h2 class="no-margin">Recent scores</h2>
-                        <button id="refresh">Refresh</button>
+                        <button id="refresh-btn">Refresh</button>
                     </div>
-                    <ul id="scores">
-                        <!-- <li class="score">Name: 100</li>
-                        <li class="score">Name: 20</li>
-                        <li class="score">Name: 50</li>
-                        <li class="score">Name: 78</li>
-                        <li class="score">Name: 125</li>
-                        <li class="score">Name: 77</li>
-                        <li class="score">Name: 42</li> -->
-                    </ul>
+                    <ul id="scores"></ul>
                 </div>
                 <div class="col-md-6 col-sm-12 d-flex flex-column align-start" id="add-scores">
                     <h2 class="no-margin">Add your score</h2>
-                    <form action="#" name="add-score" class="input-form" id="add-score" method="post">
-                        <input id="input-name" type="text" placeholder="Name (required)" name="name" required> <br>
-                        <input id="input-score" type="text" placeholder="Score (required)" name="score" required><br>
+                    <form name="add-score" class="input-form" id="add-score">
+                        <input id="user-name" type="text" placeholder="Name (required)" name="name" required> <br>
+                        <input id="user-score" type="text" placeholder="Score (required)" name="score" required><br>
                         <button id="submit-btn" type="button">Submit</button>
                     </form>
                 </div>
