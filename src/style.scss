@@ -265,6 +265,10 @@ button {
       margin: 0;
       padding: 8px 16px;
 
+      &.left {
+        text-transform: capitalize;
+      }
+
       &.right {
         background-color: rgb(225 225 84);
         font-weight: bold;
