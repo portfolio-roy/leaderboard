@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c488aa6c77.js" crossorigin="anonymous"></script>
     <title>Leaderboard</title>
 </head>
 <body>
     <main class="main">
         <div class="container">
-            <h1>Leaderboard</h1>
-            <div id="inner-container" class="col-md-12 d-flex flex-row space-bwtween align-start">
-                <div class="col-md-6 col-sm-12" id="recent-scores">
+            <header><h1><i class="fa-solid fa-trophy"></i> Leaderboard</h1></header>
+            
+            <div id="inner-container" class="col-md-12 d-flex space-bwtween align-start">
+                <div class="col-md-6 col-sm-12 columns" id="recent-scores">
                     <div id="score-header" class="d-flex flex-row space-between">
-                        <h2 class="no-margin">Recent scores</h2>
-                        <button id="refresh-btn">Refresh</button>
+                        <h2 class="no-margin box-heading" id="score-heading">Recent scores</h2>
+                        <button id="refresh-btn">Refresh <i class="fa-solid fa-arrows-rotate"></i></button>
                     </div>
                     <ul id="scores"></ul>
                 </div>
-                <div class="col-md-6 col-sm-12 d-flex flex-column align-start" id="add-scores">
-                    <h2 class="no-margin">Add your score</h2>
+                <div class="col-md-6 col-sm-12 d-flex flex-column align-start columns" id="add-scores">
+                    <h2 class="no-margin box-heading">Add your score</h2>
                     <form name="add-score" class="input-form" id="add-score">
                         <input id="user-name" type="text" placeholder="Name (required)" name="name" required> <br>
                         <input id="user-score" type="text" placeholder="Score (required)" name="score" required><br>
