@@ -12,6 +12,7 @@ import {
   submitBtn,
   theForm,
 } from './modules/globals.js';
+import { errorMsg, successMsg } from './modules/messages.js';
 
 let gameURL = '';
 fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
@@ -39,6 +40,9 @@ submitBtn.addEventListener('click', (e) => {
   if (userName.value !== '' && userScore.value !== '') {
     addScore(gameURL, userName.value, userScore.value);
     theForm.reset();
+    successMsg(msg);
+  } else {
+    errorMsg(msg);
   }
 });
 window.onload = () => {

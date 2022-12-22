@@ -205,10 +205,11 @@ button {
   }
 }
 
-.message {
+.messages {
   padding: 8px 16px;
   border-radius: 4px;
   box-shadow: 1px 2px 2px lightgrey;
+  text-align: center;
 
   &#error {
     color: $error;
