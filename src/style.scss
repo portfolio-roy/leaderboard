@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 $primary: rgb(11 65 96);
 $success: green;
 $error: red;
@@ -94,7 +95,7 @@ $col: 8.33%;
 }
 
 .col-sm-2 {
-  width: $col*2;
+  width: $col * 2;
 }
 
 .col-sm-3 {
@@ -102,11 +103,11 @@ $col: 8.33%;
 }
 
 .col-sm-4 {
-  width: $col*4;
+  width: $col * 4;
 }
 
 .col-sm-5 {
-  width: $col*5;
+  width: $col * 5;
 }
 
 .col-sm-6 {
@@ -114,11 +115,11 @@ $col: 8.33%;
 }
 
 .col-sm-7 {
-  width: $col*7;
+  width: $col * 7;
 }
 
 .col-sm-8 {
-  width: $col*8;
+  width: $col * 8;
 }
 
 .col-sm-9 {
@@ -126,11 +127,11 @@ $col: 8.33%;
 }
 
 .col-sm-10 {
-  width: $col*10;
+  width: $col * 10;
 }
 
 .col-sm-11 {
-  width: $col*11;
+  width: $col * 11;
 }
 
 .col-sm-12 {
@@ -139,6 +140,10 @@ $col: 8.33%;
 
 header {
   border-bottom: 4px double;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
   h1 {
     width: max-content;
@@ -146,7 +151,50 @@ header {
     color: white;
     padding: 8px;
     border-radius: 4px;
+
+    i {
+      color: gold;
+      transform: rotateY(45deg);
+      animation: rotate-nimation 1500ms linear infinite;
+    }
   }
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: $primary;
+  color: white;
+  transition: 500ms all ease;
+
+  i {
+    transition: 500ms all ease;
+  }
+
+  &:hover {
+    background-color: rgba($color: $primary, $alpha: 80%);
+
+    i {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+@keyframes rotate-nimation {
+  from {
+    transform: rotateY(45deg);
+  }
+
+  to {
+    transform: rotateY(225deg);
+  }
+}
+
+#game-heading span {
+  text-transform: capitalize;
 }
 
 #inner-container {
@@ -173,42 +221,73 @@ header {
   color: white;
   padding: 8px;
   border-radius: 0 8px;
-}
-
-button {
-  border: none;
-  cursor: pointer;
   font-size: 18px;
-  padding: 12px;
-  border-radius: 8px;
-  background-color: $primary;
-  color: white;
 }
 
 #scores {
   list-style-type: none;
   padding: 0;
   border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 4px;
+  max-height: 220px;
+  overflow-y: auto;
 
   .score {
-    padding: 8px 16px;
+    padding: 0;
     border-radius: 4px;
     box-shadow: 1px 2px 2px lightgrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
     &:nth-child(odd) {
-      background-color: white;
+      background-color: rgb(245 246 225);
+
+      .right {
+        background-color: rgb(225 225 84);
+      }
     }
 
     &:nth-child(even) {
-      background-color: rgb(211 211 211 / 50%);
+      background-color: rgb(224 248 228);
+
+      .right {
+        background-color: rgb(131 225 84);
+      }
+    }
+
+    p {
+      margin: 0;
+      padding: 8px 16px;
+
+      &.left {
+        text-transform: capitalize;
+      }
+
+      &.right {
+        background-color: rgb(225 225 84);
+        font-weight: bold;
+        border-radius: 0 4px 4px 0;
+        min-width: 60px;
+      }
+    }
+
+    i {
+      color: goldenrod;
     }
   }
 }
 
-.message {
+.messages {
   padding: 8px 16px;
   border-radius: 4px;
   box-shadow: 1px 2px 2px lightgrey;
+  text-align: center;
 
   &#error {
     color: $error;
@@ -247,6 +326,10 @@ button {
 }
 
 @media screen and (min-width: 768px) {
+  header {
+    flex-direction: row;
+  }
+
   .container {
     width: 80%;
   }
@@ -256,7 +339,7 @@ button {
   }
 
   .col-md-2 {
-    width: $col*2;
+    width: $col * 2;
   }
 
   .col-md-3 {
@@ -264,11 +347,11 @@ button {
   }
 
   .col-md-4 {
-    width: $col*4;
+    width: $col * 4;
   }
 
   .col-md-5 {
-    width: $col*5;
+    width: $col * 5;
   }
 
   .col-md-6 {
@@ -276,11 +359,11 @@ button {
   }
 
   .col-md-7 {
-    width: $col*7;
+    width: $col * 7;
   }
 
   .col-md-8 {
-    width: $col*8;
+    width: $col * 8;
   }
 
   .col-md-9 {
@@ -288,11 +371,11 @@ button {
   }
 
   .col-md-10 {
-    width: $col*10;
+    width: $col * 10;
   }
 
   .col-md-11 {
-    width: $col*11;
+    width: $col * 11;
   }
 
   .col-md-12 {
